@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.all{
+    background-color: rgb(182, 182, 182);
+    width: 50vw;
+    height:50vh ;
+    margin: auto;
+    padding: 20px;
+    margin-top: 10vh;
+    border-radius: 5px;
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-top: 10vh;
+}
+label{
+    font-size: 1.2rem;
+}
+
+input{
+    width: 60%;
+    height: 30px;
+    font-size: .8rem;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+select{
+    width: 60%;
+    height: 30px;
+    font-size: .8rem;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+button{
+    width: 30%;
+    height: 35px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(86, 86, 86);
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    margin-top: 120px;
+}
+#res{
+    text-align: center;
+    font-size: 1rem;
+    background-color: aliceblue;
+    margin: auto;
+    margin-top: 100px;
+    height: 30px;
+    line-height: 30px;
+    width: 60%;
+    border-radius: 5px;
+    border: 1px solid black;
+
+}
+.to, .form{
+    margin-top: 25px;
+    
+}
+.to, .form {
+    float:left;
+    width: 50%;
+}
+.to{
+    padding-left: 20px;
+    /* background-color: red; */
+
+}
+
+@media screen and (max-width:690px){
+    .all{
+        width: 90vw;
+        height: auto;
+    }
+    .to, .form{
+        float:none;
+        width: 100%;
+    }
+    
+}
