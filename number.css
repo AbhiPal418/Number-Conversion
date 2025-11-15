@@ -1,95 +1,183 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
 }
 
-.all{
-    background-color: rgb(182, 182, 182);
-    width: 50vw;
-    height:50vh ;
-    margin: auto;
-    padding: 20px;
-    margin-top: 10vh;
-    border-radius: 5px;
+body {
+    overflow-x: hidden;
+    background: black;
 }
-h2{
+
+.bg-animation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #0a0a0a, #000000);
+    animation: bgMove 8s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes bgMove {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.container {
+    width: 90%;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 5%;
+    padding-bottom: 40px;
     text-align: center;
-    margin-bottom: 20px;
+}
+
+.title {
+    color: cyan;
     font-size: 2rem;
-    margin-top: 10vh;
-}
-label{
-    font-size: 1.2rem;
-}
-
-input{
-    width: 60%;
-    height: 30px;
-    font-size: .8rem;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-select{
-    width: 60%;
-    height: 30px;
-    font-size: .8rem;
-    margin-top: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    border: 1px solid black;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px cyan;
+    animation: fadeDown 1.5s ease;
 }
 
-button{
-    width: 30%;
-    height: 35px;
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid cyan;
+    box-shadow: 0 0 20px cyan;
+    animation: popIn 1.2s ease;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+label {
+    color: #9ff;
+    font-size: 0.9rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid cyan;
+    background: black;
+    color: cyan;
     font-size: 1rem;
-    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 10px cyan;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 18px cyan;
+    transform: scale(1.02);
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
     border: none;
-    background-color: rgb(93, 93, 93);
-    color: white;
+    border-radius: 10px;
+    background: cyan;
+    color: black;
+    font-size: 1.2rem;
     cursor: pointer;
-    display: block;
-    margin: auto;
-    margin-top: 120px;
+    transition: 0.3s;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px cyan;
 }
-#res{
+
+.btn:hover {
+    transform: scale(1.08);
+    background: #00faff;
+    box-shadow: 0 0 30px cyan;
+}
+
+.result-box {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    background: rgba(0,255,255,0.1);
+    border-left: 4px solid cyan;
+    color: #9ff;
     text-align: center;
-    font-size: 1rem;
-    background-color: aliceblue;
-    margin: auto;
-    margin-top: 100px;
-    height: 30px;
-    line-height: 30px;
-    width: 60%;
-    border-radius: 5px;
-    border: 1px solid black;
-
-}
-.to, .form{
-    margin-top: 25px;
-    
-}
-.to, .form {
-    float:left;
-    width: 50%;
-}
-.to{
-    padding-left: 20px;
-    /* background-color: red; */
-
+    font-weight: 600;
+    box-shadow: 0 0 15px cyan;
+    animation: fadeIn 1s ease;
 }
 
-@media screen and (max-width:690px){
-    .all{
-        width: 90vw;
-        height: auto;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.5rem;
     }
-    .to, .form{
-        float:none;
-        width: 100%;
+    .card {
+        padding: 18px;
     }
-    
+    .row {
+        flex-direction: column;
+    }
+    input, select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+    .result-box {
+        font-size: 0.9rem;
+    }
 }
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 10%;
+    }
+}
+
+@media (max-width: 900px) {
+    .container {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .title {
+        font-size: 2.2rem;
+    }
+    .container {
+        max-width: 650px;
+    }
+}
+
